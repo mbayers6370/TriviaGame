@@ -1,8 +1,8 @@
 window.onload = function () {
     $("#start").on("click", start);
 
-
-    const mcQuestion = [
+    // an array of questions, answer, and correct answer
+    const myQuestion = [
         {
             question: "What name was Voldemort born with?",
             answers: [
@@ -66,6 +66,7 @@ window.onload = function () {
     var wins = 0;
     var loss = 0;
 
+    // 
     function start() {
 
         // DONE: Use setInterval to start the count here and set the clock to running.
@@ -73,10 +74,10 @@ window.onload = function () {
             $("#display").text("00:10");
             intervalId = setInterval(count, 1000);
             clockRunning = true;
-            displayQA();
-            $("#start").remove();
-        }
-        
+            displayQA();    
+            $("#welcome").remove();
+            
+        }   
     }
 
     function displayQA() {
@@ -86,22 +87,23 @@ window.onload = function () {
                 clearInterval(intervalId);
                 $('#mainDiv').empty();
                 $('#mainDiv').css('background-image', 'url(assets/images/happy.jpg)');
-                $("#mainDiv").append("You WIN!");
+                $("#mainDiv").append("<p id='score'>You WIN!</p>");
                 return;
             } else {
                 console.log("you lose!");
                 clearInterval(intervalId);
                 $('#mainDiv').empty();
                 $('#mainDiv').css('background-image', 'url(assets/images/bad.jpg)');
-                $("#mainDiv").append("Try Again Later!");
+                $("#mainDiv").append("<p id='score'>Try Again Later...</p>");
                 return;
             }
         }
-        $("#question").text(mcQuestion[counter].question);
-        currentAns = mcQuestion[counter].correctAnswer;
-        for (var i = 0; i < mcQuestion.length; i++) {
+        
+        $("#question").text(myQuestion[counter].question);
+        currentAns = myQuestion[counter].correctAnswer;
+        for (var i = 0; i < myQuestion.length; i++) {
             for (var i = 0; i < 4; i++) {
-                $("#question").append("<br><button class='btn btn-warning answer' value='" + [i] + "'>" + mcQuestion[counter].answers[i] + "</button>");
+                $("#question").append("<br><button class='btn answer amber lighten-4 black-text' value='" + [i] + "'>" + myQuestion[counter].answers[i] + "</button>");
             }
         }
 
@@ -109,7 +111,7 @@ window.onload = function () {
             answer = $(this).val();
 
             if (answer == currentAns) {
-                $("#display").text("You WIN!");
+                $("#display").text("Correct!");
                 clearInterval(intervalId);
                 clockRunning = false;
                 counter++;
@@ -118,13 +120,17 @@ window.onload = function () {
                 let timeoutID = setTimeout(start, 1000);
 
             } else if (answer != currentAns) {
-                $("#display").text("You Lost!");
+                var answerNum = (myQuestion[counter].correctAnswer);
+                var displayAnswer = (myQuestion[counter].answers[answerNum]);
+                $("#question").empty();
+                $("#question").append(displayAnswer + "! Try Again!");
+                $("#display").text("Wrong!");
                 clearInterval(intervalId);
                 clockRunning = false;
                 counter++;
                 time = 10;
                 loss++;
-                let timeoutID = setTimeout(start, 1000);
+                let timeoutID = setTimeout(start, 2000);
             }
         });
 

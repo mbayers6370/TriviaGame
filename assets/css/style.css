@@ -1,59 +1,97 @@
+body {
+  background-image: url('../images/clock.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: bold;
+}
+ 
  #mainDiv {
-      top: 5%;
-      max-width: 70%;
-      position: absolute;
-      height: 70%;
+      margin-top: 20px;
+      height: 85vh;
       backdrop-filter: blur(7px);
-      background-color: rgba(255, 255, 255, 0.459);  
+      background-color: rgba(70, 70, 70, 0.459);  
       border-radius: 10px;
-      border: 5px solid #ffc72e;
-      left: 15%;
-      text-align: center;
+      border: 5px solid #000;
+      margin-bottom: 20px;
       background-repeat: no-repeat;
-      vertical-align: middle;
-      background-size: 100%;
-      font-family: 'Amita', cursive;
-      color: white;
-      margin-top: 5%;
+      background-size: cover;
+      overflow: hidden;
+      background-position: center;
+    }
+
+    #timer{
+      border-radius: 10px;
+      border: 5px solid #000;
+      backdrop-filter: blur(7px);
+      background-color: rgba(70, 70, 70, 0.459); 
+      margin-top: 20px;
     }
 
   #bkgdIMG {
-    width: 100%;
-    height: -webkit-fill-available;
     backdrop-filter: opacity(.4);
   }
 
-  #start {
-      position: absolute;
-      top: 90%;
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      border: 1px solid rgb(24, 5, 5);
-      color: white;
-      background-color: rgb(24, 5, 5);
-      left: 43%;
-  }
-
   #display {
-      font-family: 'Amita', cursive;
-      font-size: 1.5em;
-      margin-top: 2%;
+      font-size: 35px;
+      margin-top: 1%;
       color: black;
+      padding-bottom: 2%;
+      font-weight: bold;
   }
 
   #question {
-      margin-top: 3%;
-      font-family: 'Amita', cursive;
-      font-size: 1.6em;
+      margin-top: 20%;
+      font-size: 25px;
       color: black;
   }
 
+  #start{
+    font-family: 'Playfair Display SC', serif;
+    font-weight: bold;
+  }
+
   .btn {
-      width: 150px;
       margin-top: 10px;
       border-top: 10px;
-      font-size: 3em;
+      font-family: 'Playfair Display SC', serif;
+      font-weight: bold;
+  }
+
+  #welcome{
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px;
+    width: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #score{
+    font-size: 30px;
+    color: rgb(233, 233, 179);
+  }
+
+  @media only screen and (max-width: 900px) {
+    body {
+      background-size: 200% 120%;
+      background-position: center;
+    }
+
+    #welcome{
+      font-size: 20px;
+    }
+
+    #mainDiv{
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      background-position: center;
+    }
   }
 
  
