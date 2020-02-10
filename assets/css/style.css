@@ -91,6 +91,7 @@ body {
       background-size: cover;
       overflow: hidden;
       background-position: center;
+      height: 80vh;
     }
   }
 
