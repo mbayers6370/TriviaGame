@@ -11,7 +11,7 @@ body {
       margin-top: 20px;
       height: 85vh;
       backdrop-filter: blur(15px);
-      background-color: rgba(148, 148, 148, 0.459);  
+      background-color: rgba(214, 214, 214, 0.459);  
       border-radius: 10px;
       border: 5px solid #000;
       margin-bottom: 20px;
@@ -25,7 +25,7 @@ body {
       border-radius: 10px;
       border: 5px solid #000;
       backdrop-filter: blur(15px);
-      background-color: rgba(148, 148, 148, 0.459); 
+      background-color: rgba(214, 214, 214, 0.459);
       margin-top: 20px;
     }
 
